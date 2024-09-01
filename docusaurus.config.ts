@@ -66,10 +66,11 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Municipio',
+      // title: 'Municipio',
       logo: {
         alt: 'Municipio Logo',
         src: 'img/logo.svg',
+        srcDark: 'img/logo-inverted.svg',
       },
       items: [
         {
