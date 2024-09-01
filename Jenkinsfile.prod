@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+    environment {
+        HOST = 'docs.municipio.se'
+        DIR = '/srv/www/docs.municipio.se/current/'
+    }
+    stages {
+        stage('Clean') {
+            when {
+                // case insensitive regular expression for truthy values
+                expression { return params.CLEAN ==~ /(?i)(1|Y|YES|T|TRUE|ON|RUN)/ }
+            }
+            steps {
+                nodejs('v20') {
+                    sh 'yarn clean'
+                }
+            }
+        }
+        stage('Install') {
+            steps {
+                nodejs('v20') {
+                    sh 'yarn install'
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                nodejs('v20') {
+                    sh 'yarn build'
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sshagent(credentials: ['default-ssh-agent']) {
+                    nodejs('v20') {
+                        sh "rsync -ar --delete  build/ web@${env.HOST}:${env.DIR}"
+                    }
+                }
+            }
+        }
+    }
+}
