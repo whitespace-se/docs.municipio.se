@@ -1,44 +1,44 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: 'Municipio',
+  title: "Municipio",
   // tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: 'https://docs.municipio.se',
+  url: "https://docs.municipio.se",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docs.municipio.se', // Usually your repo name.
+  organizationName: "facebook", // Usually your GitHub org/user name.
+  projectName: "docs.municipio.se", // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'sv',
-    locales: ['sv'],
+    defaultLocale: "sv",
+    locales: ["sv"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/whitespace-se/docs.municipio.se/tree/main/',
+            "https://github.com/whitespace-se/docs.municipio.se/tree/main/",
         },
         // blog: {
         //   showReadingTime: true,
@@ -56,7 +56,7 @@ const config: Config = {
         //   onUntruncatedBlogPosts: 'warn',
         // },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
@@ -64,26 +64,32 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: "img/docusaurus-social-card.jpg",
     navbar: {
       // title: 'Municipio',
       logo: {
-        alt: 'Municipio Logo',
-        src: 'img/logo.svg',
-        srcDark: 'img/logo-inverted.svg',
+        alt: "Municipio Logo",
+        src: "img/logo.svg",
+        srcDark: "img/logo-inverted.svg",
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'editorSidebar',
-          position: 'left',
-          label: 'Redaktör',
+          type: "docSidebar",
+          sidebarId: "editorSidebar",
+          position: "left",
+          label: "Redaktör",
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'developerSidebar',
-          position: 'left',
-          label: 'Utvecklare',
+          type: "docSidebar",
+          sidebarId: "adminSidebar",
+          position: "left",
+          label: "Administratör",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "developerSidebar",
+          position: "left",
+          label: "Utvecklare",
         },
         // {to: '/blog', label: 'Blog', position: 'left'},
         // {
