@@ -28,8 +28,8 @@ Efter att ha fyllt i användarnamn (fungerar också bra med epostadressen) och l
 Du kommer nu komma till en ny sida där du knappar in en 8-siffrig kod som du får via ett epost-meddelande.
 
 
-## Lägg till 2-faktor-autentisering via Google Authenticator (eller liknande)
-För att förenkla inloggningen och slippa använda koden som kommer via epost kan du lägga till en så kallad 2-faktor-autentisering via en app i telefonen - exempelvis _Google Authenticator_.
+## Lägg till 2-faktor-autentisering via Google Authenticator, MS Authenticator (eller liknande)
+För att förenkla inloggningen och slippa använda koden som kommer via epost kan du lägga till en så kallad 2-faktor-autentisering via en app i telefonen - exempelvis _Google Authenticator_ eller _MS Authenticator_
 
 Ladda först hem appen via _Play Butik_ eller _App Store_ och starta den.
 
