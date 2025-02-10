@@ -1,11 +1,20 @@
 {
   "name": "docs-municipio-se",
+  "type": "project",
+  "description": "Muncipio Documentation",
+  "homepage": "https://whitespace.se/",
+  "authors": [
+    {
+      "name": "Whitespace AB",
+      "email": "code@whitespace.se",
+      "homepage": "https://github.com/whitespace-se"
+    }
+  ],
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "dev": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -13,23 +22,22 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "format": "run-s format:*",
+    "format:eslint": "eslint --fix '**/*.{js,jsx}' || true",
+    "format:prettier": "prettier --write '**/*.{js,jsx,json,md,mdx,yml,html,css}'"
   },
   "dependencies": {
-    "@docusaurus/core": "3.5.2",
-    "@docusaurus/preset-classic": "3.5.2",
-    "@mdx-js/react": "^3.0.0",
-    "clsx": "^2.0.0",
-    "prism-react-renderer": "^2.3.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
-  },
-  "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.5.2",
-    "@docusaurus/tsconfig": "3.5.2",
-    "@docusaurus/types": "3.5.2",
-    "prettier": "^3.3.3",
-    "typescript": "~5.5.2"
+    "@docusaurus/core": "^3.7.0",
+    "@docusaurus/plugin-client-redirects": "^3.7.0",
+    "@docusaurus/plugin-sitemap": "^3.7.0",
+    "@docusaurus/preset-classic": "^3.7.0",
+    "@docusaurus/theme-mermaid": "^3.7.0",
+    "@mdx-js/react": "^3.1.0",
+    "clsx": "^2.1.1",
+    "docusaurus-lunr-search": "^3.6.0",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "browserslist": {
     "production": [
@@ -38,12 +46,15 @@
       "not op_mini all"
     ],
     "development": [
-      "last 3 chrome version",
-      "last 3 firefox version",
-      "last 5 safari version"
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   },
-  "engines": {
-    "node": ">=18.0"
+  "devDependencies": {
+    "eslint": "9.20.0",
+    "eslint-plugin-react": "7.37.4",
+    "npm-run-all2": "7.0.2",
+    "prettier": "3.5.0"
   }
 }
