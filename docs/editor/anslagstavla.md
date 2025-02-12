@@ -2,8 +2,6 @@
 title: Anslagstavla
 ---
 
-# Anslagstavla
-
 Kommuner är enligt lag skyldiga att hålla en anslagstavla där viktig information
 som beslut, protokoll och kungörelser publiceras. Idag sker detta vanligtvis
 digitalt via kommunens webbplats. Den digitala anslagstavlan är en viktig del av

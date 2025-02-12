@@ -3,8 +3,6 @@ sidebar_position: 3
 title: Skapa en ny sida
 ---
 
-# Skapa en ny sida
-
 Det finns flera sätt att skapa en ny sida i Municipio. Här går vi igenom de
 vanligaste sätten.
 

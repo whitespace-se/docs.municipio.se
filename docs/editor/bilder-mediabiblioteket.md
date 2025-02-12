@@ -2,8 +2,6 @@
 title: Bilder och mediabiblioteket
 ---
 
-# Bilder och mediabiblioteket
-
 ## Lägga till bilder i texteditorn
 
 För att lägga till en bild i nyhetstexten klickar du på _Lägg till media_

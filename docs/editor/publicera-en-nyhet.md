@@ -3,8 +3,6 @@ sidebar_position: 4
 title: Publicera en nyhet
 ---
 
-# Publicera en nyhet
-
 För att publicera en nyhet i Municipio går du till _Nyheter_ i adminpanelens
 vänstermeny **(1)**. Du kommer då till vyn _Alla nyheter_ där du ser en översikt
 av alla nyheter. Härifrån kan du klicka på _Lägg till ny nyhet_ längst upp på
