@@ -16,9 +16,39 @@ media_folder: "static/img" # Media files will be stored in the repo under static
 public_folder: "/img/" # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
-- name: docs
-  label: Docs
-  folder: docs
+- name: admin
+  label: Admin
+  folder: docs/admin
+  nested:
+    depth: 500
+    summary: '{{title}}'
+  identifier_field: title
+  extension: md
+  widget: "list"
+  create: true
+  fields:
+    - { name: title, label: Title, widget: string }
+    - { name: slug, label: Slug, widget: string }
+    - { name: sidebar_position, label: Sidebar position, widget: number }
+    - { name: body, label: Body, widget: markdown }
+- name: developer
+  label: Developer
+  folder: docs/developer
+  nested:
+    depth: 500
+    summary: '{{title}}'
+  identifier_field: title
+  extension: md
+  widget: "list"
+  create: true
+  fields:
+    - { name: title, label: Title, widget: string }
+    - { name: slug, label: Slug, widget: string }
+    - { name: sidebar_position, label: Sidebar position, widget: number }
+    - { name: body, label: Body, widget: markdown }
+- name: editor
+  label: Editor
+  folder: docs/editor
   nested:
     depth: 500
     summary: '{{title}}'

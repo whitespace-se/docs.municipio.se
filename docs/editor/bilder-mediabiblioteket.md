@@ -1,3 +1,7 @@
+---
+title: Bilder och mediabiblioteket
+---
+
 # Bilder och mediabiblioteket
 
 ## Lägga till bilder i texteditorn

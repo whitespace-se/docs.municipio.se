@@ -1,3 +1,7 @@
+---
+title: Anslagstavla
+---
+
 # Anslagstavla
 
 Kommuner är enligt lag skyldiga att hålla en anslagstavla där viktig information

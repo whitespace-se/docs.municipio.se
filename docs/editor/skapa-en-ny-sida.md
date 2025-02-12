@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+title: Skapa en ny sida
 ---
 
 # Skapa en ny sida
