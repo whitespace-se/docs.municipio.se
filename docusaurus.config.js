@@ -87,15 +87,6 @@ const config = {
       style: "dark",
       links: [
         {
-          title: "Sites",
-          items: [
-            {
-              label: "Support",
-              href: "https://support.whitespace.se",
-            },
-          ],
-        },
-        {
           title: "External",
           items: [
             {
