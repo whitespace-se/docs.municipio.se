@@ -4,6 +4,12 @@ pipeline {
         HOST = 'docs.municipio.se'
         DIR = '/srv/www/docs.municipio.se/current/'
     }
+    parameters {
+        choice(name: 'CLEAN', choices: [
+          'NO',
+          'YES',
+        ], description: '')
+    }
     stages {
         stage('Clean') {
             when {
@@ -11,31 +17,34 @@ pipeline {
                 expression { return params.CLEAN ==~ /(?i)(1|Y|YES|T|TRUE|ON|RUN)/ }
             }
             steps {
-                nodejs('v20') {
-                    sh 'yarn clean'
+                nodejs('v24') {
+                    sh "yarn cache clean"
+                    sh "yarn clear"
                 }
             }
         }
         stage('Install') {
             steps {
-                nodejs('v20') {
-                    sh 'yarn install'
+                nodejs('v24') {
+                    sh "yarn install"
                 }
             }
         }
         stage('Build') {
             steps {
-                nodejs('v20') {
-                    sh 'yarn build'
+                nodejs('v24') {
+                    sh "yarn build"
                 }
             }
         }
         stage('Deploy') {
             steps {
                 sshagent(credentials: ['default-ssh-agent']) {
-                    nodejs('v20') {
+                    nodejs('v24') {
                         sh "rsync -ar --delete  build/ web@${env.HOST}:${env.DIR}"
                     }
+                    sh "ssh web@${env.HOST} 'ln -sfn /srv/www/${env.HOST}/gateway /srv/www/${env.HOST}/current/gateway'"
+                    sh "ssh web@${env.HOST} 'cp /srv/www/${env.HOST}/gateway/assets/* /srv/www/${env.HOST}/current/assets/'"
                 }
             }
         }

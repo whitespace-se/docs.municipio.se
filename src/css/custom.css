@@ -1,11 +1,12 @@
 :root {
-  --ifm-color-primary: #215da6;
-  --ifm-color-primary-dark: #1e5495;
-  --ifm-color-primary-darker: #1c4f8d;
-  --ifm-color-primary-darkest: #62666b;
-  --ifm-color-primary-light: #2466b7;
-  --ifm-color-primary-lighter: #266bbf;
-  --ifm-color-primary-lightest: #2d79d5;
+  --ifm-color-primary: #1976d2;
+  --ifm-color-primary-dark: #1565c0;
+  --ifm-color-primary-darker: #1360b5;
+  --ifm-color-primary-darkest: #0f4f96;
+  --ifm-color-primary-light: #1e88e5;
+  --ifm-color-primary-lighter: #2196f3;
+  --ifm-color-primary-lightest: #42a5f5;
+  --ifm-background-color: #f5f5f5;
   --ifm-font-family-base: "Suisse";
   --ifm-heading-font-family: "SuisseBold";
   --ifm-font-weight-base: 400;
@@ -34,13 +35,14 @@ html {
 }
 
 html[data-theme="dark"] {
-  --ifm-color-primary: #f7b018;
-  --ifm-color-primary-dark: #eca308;
-  --ifm-color-primary-darker: #df9a08;
-  --ifm-color-primary-darkest: #b77f06;
-  --ifm-color-primary-light: #f8b932;
-  --ifm-color-primary-lighter: #f8bd3f;
-  --ifm-color-primary-lightest: #facb67;
+  --ifm-color-primary: #1dd1a1;
+  --ifm-color-primary-dark: #1abc94;
+  --ifm-color-primary-darker: #18b189;
+  --ifm-color-primary-darkest: #149270;
+  --ifm-color-primary-light: #34d7ae;
+  --ifm-color-primary-lighter: #41dab4;
+  --ifm-color-primary-lightest: #67e3c7;
+  background-image: none;
 }
 
 .docusaurus-highlight-code-line {
@@ -55,7 +57,12 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 }
 
 .navbar {
-  background-color: var(--ifm-code-background);
+  background-color: var(--ifm-navbar-background-color);
+}
+
+html[data-theme="light"] .footer {
+  background-color: #f5f5f5;
+  border-top: 1px solid #dbdde1;
 }
 
 .footer--dark {
@@ -65,6 +72,181 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
   --ifm-footer-title-color: var(--ifm-footer-color);
 }
 
+/* Code blocks with dark theme and line numbers */
 pre code {
-  background-color: var(--ifm-code-background);
+  background-color: #1E1E1E;
+  color: #D4D4D4;
+  display: block;
+  font-family: "Menlo", "Monaco", "Courier New", monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  tab-size: 2;
+  -moz-tab-size: 2;
+  white-space: pre;
+  word-wrap: normal;
+  overflow-x: auto;
+}
+
+pre[class*="language-"] {
+  background-color: #1E1E1E !important;
+  counter-reset: line;
+}
+
+pre[class*="language-"] code {
+  background-color: transparent !important;
+}
+
+pre[class*="language-"] .token-line::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 2.5rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.3);
+  user-select: none;
+  pointer-events: none;
+}
+
+div[class*="codeBlockContainer"] button {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #D4D4D4 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+div[class*="codeBlockContainer"] button:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+pre::-webkit-scrollbar {
+  height: 0.5rem;
+}
+
+pre::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 0.25rem;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.markdown a {
+  text-decoration: underline;
+}
+
+.navbar__brand {
+  margin-right: 1rem;
+}
+
+.navbar__title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.whitespace-analys-logo {
+  margin-left: 8px;
+  color: #00806a;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+@media (max-width: 500px) {
+  .navbar__title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .whitespace-analys-logo {
+    margin-left: 0;
+  }
+}
+
+html[data-theme="dark"] .whitespace-analys-logo {
+  color: #1dd1a1;
+}
+
+.markdown a,
+.footer__link-item {
+  text-decoration: underline;
+}
+
+/* @media (max-width: 500px) {
+  .navbar__search {
+    display: none;
+  }
+} */
+
+/* Docusaurus alerts/admonitions */
+.alert--danger {
+  background-color: rgb(215, 58, 74);
+  border-color: rgb(172, 46, 59);
+  --ifm-alert-foreground-color: white;
+}
+
+.alert--danger a {
+  color: var(--ifm-alert-foreground-color);
+  text-decoration: underline;
+}
+
+.alert--info {
+  background-color: rgb(0, 117, 202);
+  border-color: rgb(0, 94, 162);
+  --ifm-alert-foreground-color: white;
+}
+
+.alert--info a {
+  color: var(--ifm-alert-foreground-color);
+  text-decoration: underline;
+}
+
+.alert--success {
+  background-color: rgb(34, 134, 58);
+  border-color: rgb(27, 107, 46);
+  --ifm-alert-foreground-color: white;
+}
+
+.alert--success a {
+  color: var(--ifm-alert-foreground-color);
+  text-decoration: underline;
+}
+
+.alert--warning {
+  background-color: rgb(242, 125, 4);
+  border-color: rgb(194, 100, 3);
+  --ifm-alert-foreground-color: white;
+}
+
+.alert--warning a {
+  color: var(--ifm-alert-foreground-color);
+  text-decoration: underline;
+}
+
+html[data-theme="dark"] .alert--danger {
+  background-color: rgb(215, 58, 74);
+  border-color: rgb(172, 46, 59);
+  color: white;
+}
+
+html[data-theme="dark"] .alert--info {
+  background-color: rgb(0, 117, 202);
+  border-color: rgb(0, 94, 162);
+  color: white;
+}
+
+html[data-theme="dark"] .alert--success {
+  background-color: rgb(34, 134, 58);
+  border-color: rgb(27, 107, 46);
+  color: white;
+}
+
+html[data-theme="dark"] .alert--warning {
+  background-color: rgb(242, 125, 4);
+  border-color: rgb(194, 100, 3);
+  color: white;
 }
