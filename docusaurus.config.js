@@ -11,7 +11,6 @@ const config = {
   baseUrl: "/",
   trailingSlash: true,
   onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
   i18n: {
     defaultLocale: "sv",
     locales: ["sv"],
@@ -22,6 +21,9 @@ const config = {
   markdown: {
     mermaid: true,
     format: "detect",
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
   },
   themes: ["@docusaurus/theme-mermaid"],
   staticDirectories: ["static", "files"],
@@ -140,7 +142,7 @@ const config = {
           ],
         },
         {
-          title: "Om Municipio Dokumentation",
+          title: "Om Municipio dokumentation",
           items: [
             {
               html: `Här samlar vi guider och stöd som gör det enklare för redaktörer, administratörer och utvecklare att arbeta med webbplatser byggda på Municipio.`,

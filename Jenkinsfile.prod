@@ -43,8 +43,6 @@ pipeline {
                     nodejs('v24') {
                         sh "rsync -ar --delete  build/ web@${env.HOST}:${env.DIR}"
                     }
-                    sh "ssh web@${env.HOST} 'ln -sfn /srv/www/${env.HOST}/gateway /srv/www/${env.HOST}/current/gateway'"
-                    sh "ssh web@${env.HOST} 'cp /srv/www/${env.HOST}/gateway/assets/* /srv/www/${env.HOST}/current/assets/'"
                 }
             }
         }
